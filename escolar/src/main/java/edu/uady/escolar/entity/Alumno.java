@@ -10,7 +10,7 @@ import java.util.List;
 @Table (name = "alumnos")
 @Data
 @NoArgsConstructor
-public class Alumno {
+public class CostoMaterias {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,6 +25,6 @@ public class Alumno {
     @Column(name = "licenciatura_id")
     private Long licenciaturaId;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "alumno")
-    private List<Kardex> kardexs;
+    private List<Pago> kardexs;
 
 }

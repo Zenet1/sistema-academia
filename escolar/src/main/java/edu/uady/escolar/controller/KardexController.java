@@ -2,7 +2,7 @@ package edu.uady.escolar.controller;
 
 import edu.uady.escolar.entity.Kardex;
 import edu.uady.escolar.error.ControlEscolarException;
-import edu.uady.escolar.service.KardexService;
+import edu.uady.escolar.service.kardexService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @Log4j2
 public class KardexController {
     @Autowired
-    private KardexService kardexService;
+    private kardexService kardexService;
 
     @GetMapping
     public ResponseEntity<?> getAllKardexs() {
@@ -33,13 +33,13 @@ public class KardexController {
 
     @PostMapping
     public Kardex createKardex(@RequestBody Kardex kardex){
-        log.info("Kardex  a guardar: "+kardex.toString());
+        log.info("Kardex  a guardar: " + kardex.toString());
         return kardexService.createKardex(kardex);
     }
 
     @PutMapping
     public Kardex updateKardex(@RequestBody Kardex kardex) {
-        log.info("Kardex a actualizar :"+kardex.toString());
+        log.info("Kardex a actualizar :" + kardex.toString());
         return kardexService.updateKardex(kardex);
     }
 

@@ -1,7 +1,7 @@
 package edu.uady.escolar.controller;
 
 import edu.uady.escolar.entity.Alumno;
-import edu.uady.escolar.service.AlumnoService;
+import edu.uady.escolar.service.alumnoService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,7 @@ import java.util.List;
 @Log4j2
 public class AlumnoController {
     @Autowired
-    private AlumnoService alumnoService;
+    private alumnoService alumnoService;
 
     @GetMapping
     public List<Alumno> getAllAlumnos() {
@@ -28,7 +28,7 @@ public class AlumnoController {
 
     @PutMapping
     public Alumno updateAlumno(@RequestBody Alumno alumno) {
-        log.info("Alumno a actualizar :"+alumno.toString());
+        log.info("Alumno a actualizar :" + alumno.toString());
         return alumnoService.updateAlumno(alumno);
     }
 

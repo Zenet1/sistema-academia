@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Table(name ="kardex")
 @Data
 @NoArgsConstructor
-public class Kardex {
+public class Pago {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -21,7 +21,7 @@ public class Kardex {
     private Double calificacion;
     @ManyToOne
     @JoinColumn( name = "alumno_id")
-    private Alumno alumno;
+    private CostoMaterias alumno;
 
 
 }
